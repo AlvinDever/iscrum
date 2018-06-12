@@ -1,0 +1,15 @@
+E:\Study\WPF\iScrum\iScrum\bin\Debug\iScrum.exe.config
+E:\Study\WPF\iScrum\iScrum\bin\Debug\iScrum.exe
+E:\Study\WPF\iScrum\iScrum\bin\Debug\iScrum.pdb
+E:\Study\WPF\iScrum\iScrum\obj\Debug\iScrum.csprojAssemblyReference.cache
+E:\Study\WPF\iScrum\iScrum\obj\Debug\MainWindow.g.cs
+E:\Study\WPF\iScrum\iScrum\obj\Debug\App.g.cs
+E:\Study\WPF\iScrum\iScrum\obj\Debug\iScrum_MarkupCompile.cache
+E:\Study\WPF\iScrum\iScrum\obj\Debug\iScrum_MarkupCompile.lref
+E:\Study\WPF\iScrum\iScrum\obj\Debug\MainWindow.baml
+E:\Study\WPF\iScrum\iScrum\obj\Debug\iScrum.g.resources
+E:\Study\WPF\iScrum\iScrum\obj\Debug\iScrum.Properties.Resources.resources
+E:\Study\WPF\iScrum\iScrum\obj\Debug\iScrum.csproj.GenerateResource.cache
+E:\Study\WPF\iScrum\iScrum\obj\Debug\iScrum.csproj.CoreCompileInputs.cache
+E:\Study\WPF\iScrum\iScrum\obj\Debug\iScrum.exe
+E:\Study\WPF\iScrum\iScrum\obj\Debug\iScrum.pdb
