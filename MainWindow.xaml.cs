@@ -39,9 +39,10 @@ namespace iScrum
         {
             Button btn = InitButton(DateTime.Now.ToLongTimeString());
 
-            List<object> controls = new List<object>();
+            List<object> controls = new List<object>();            
 
-            for(int i=StackP_ToDo.Children.Count-1; i>=0; i--)
+
+            for(int i=0; i< StackP_ToDo.Children.Count; i++)
             {
                 controls.Add(StackP_ToDo.Children[i]);
             }
@@ -49,10 +50,7 @@ namespace iScrum
             StackP_ToDo.Children.Clear();
             StackP_ToDo.Children.Add(btn);
 
-            foreach(object obj in controls)
-            {
-                StackP_ToDo.Children.Add((UIElement)obj);
-            }
+            controls.ForEach(bt => StackP_ToDo.Children.Add((UIElement)bt));            
         }
 
         private void Ip_Button_Click_Add_Card(object sender, RoutedEventArgs e)
@@ -61,7 +59,7 @@ namespace iScrum
 
             List<object> controls = new List<object>();
 
-            for (int i = StackP_Inprocess.Children.Count - 1; i >= 0; i--)
+            for (int i = 0; i < StackP_Inprocess.Children.Count; i++)
             {
                 controls.Add(StackP_Inprocess.Children[i]);
             }
@@ -69,10 +67,7 @@ namespace iScrum
             StackP_Inprocess.Children.Clear();
             StackP_Inprocess.Children.Add(btn);
 
-            foreach (object obj in controls)
-            {
-                StackP_Inprocess.Children.Add((UIElement)obj);
-            }
+            controls.ForEach(obj => StackP_Inprocess.Children.Add((UIElement)obj));
         }
 
         private void Fns_Button_Click_Add_Card(object sender, RoutedEventArgs e)
@@ -81,7 +76,7 @@ namespace iScrum
 
             List<object> controls = new List<object>();
 
-            for (int i = StackP_Fns.Children.Count - 1; i >= 0; i--)
+            for (int i = 0; i < StackP_Fns.Children.Count; i++)
             {
                 controls.Add(StackP_Fns.Children[i]);
             }
@@ -89,10 +84,7 @@ namespace iScrum
             StackP_Fns.Children.Clear();
             StackP_Fns.Children.Add(btn);
 
-            foreach (object obj in controls)
-            {
-                StackP_Fns.Children.Add((UIElement)obj);
-            }
+            controls.ForEach(obj => StackP_Fns.Children.Add((UIElement)obj));
         }
 
         private Button InitButton(string name)
