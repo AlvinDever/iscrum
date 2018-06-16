@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using iScrum.Respository;
+using System.Data;
 
 namespace iScrum
 {
@@ -21,26 +23,82 @@ namespace iScrum
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static SqliteHelper sqliteHelper = new SqliteHelper();
         public MainWindow()
         {
             InitializeComponent();
+
+            InitToDoList();
         }
 
         private Assembly _assembly = Assembly.GetExecutingAssembly();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string winName = ((Button)e.OriginalSource).Tag.ToString();
-            Window win = ((Window)_assembly.CreateInstance(string.Format("iScrum.{0}", winName)));
-            win.Owner = this;
-            win.Show();
+           string winName = ((Button)e.OriginalSource).Tag.ToString();
+            switch(winName)
+            {
+                case "AddTodo":
+                    Window_Todo win = new Window_Todo();
+                    win.Owner = this;
+                    win.PassValuesEvent += new Window_Todo.PassValuesHandle(Add_ToDo_Event);
+                    win.Show();
+                    break;
+            }
+           
+        }
+
+        private void InitToDoList()
+        {
+            DataSet todoData = sqliteHelper.GetToDoList();
+            Button btn = null;
+
+            StackP_ToDo.Children.Clear();
+
+            for (int i = todoData.Tables[0].Rows.Count - 1; i >= 0; i--)
+            {
+                btn = InitButton(todoData.Tables[0].Rows[i][1].ToString());
+                StackP_ToDo.Children.Add(btn);
+            }
+        }
+
+        private void Add_ToDo_Event(object sender, string e)
+        {
+            try
+            {
+                Button btn = null;
+                if (sqliteHelper.AddToDo(new Model.ToDo
+                {
+                    Name = e
+                }))
+                {
+                    List<object> controls = new List<object>();
+
+                    for (int i = 0; i < StackP_ToDo.Children.Count; i++)
+                    {
+                        controls.Add(StackP_ToDo.Children[i]);
+                    }
+
+                    StackP_ToDo.Children.Clear();
+                    btn = InitButton(e);
+                    StackP_ToDo.Children.Add(btn);
+                    
+                    controls.ForEach(bt => StackP_ToDo.Children.Add((UIElement)bt));
+                }
+
+            }
+            catch(Exception ex)
+            {
+
+            }
+
         }
 
         private void Todo_Button_Click_Add_Card(object sender, RoutedEventArgs e)
-        {
+        {            
+
             Button btn = InitButton(DateTime.Now.ToLongTimeString());
 
-            List<object> controls = new List<object>();            
-
+            List<object> controls = new List<object>();
 
             for(int i=0; i< StackP_ToDo.Children.Count; i++)
             {

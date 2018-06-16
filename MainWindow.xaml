@@ -30,9 +30,9 @@
                 </Grid.ColumnDefinitions>
                 <ContentControl Name="C1" Grid.Column="0" Style="{StaticResource panel-default}" >
                     <DockPanel LastChildFill="True">
-                        <ContentControl DockPanel.Dock="Top" Style="{StaticResource panel-heading-dark}" Content="To Do"/>
+                        <ContentControl DockPanel.Dock="Top" Style="{StaticResource panel-heading-danger}" Content="To Do"/>
                         <ContentControl DockPanel.Dock="Bottom" Style="{StaticResource panel-body}" Padding="4" VerticalAlignment="Bottom">
-                            <Button Content="+ Add Card" HorizontalAlignment="Stretch" Margin="0,0,0,0" Click="Todo_Button_Click_Add_Card"/>
+                            <Button Content="+ Add Card" Tag="AddTodo" HorizontalAlignment="Stretch" Margin="0,0,0,0" Click="Button_Click"/>
                         </ContentControl>
                         <ScrollViewer Grid.Row="1" Margin="0,0,0,4" VerticalScrollBarVisibility="Auto" MinHeight="200">
                             <StackPanel Name="StackP_ToDo" Orientation="Vertical">
@@ -42,7 +42,7 @@
                 </ContentControl>
                 <ContentControl Name="C2" Grid.Column="1" Style="{StaticResource panel-default}">
                     <DockPanel LastChildFill="True">
-                        <ContentControl DockPanel.Dock="Top" Style="{StaticResource panel-heading-dark}" Content="In Process"/>
+                        <ContentControl DockPanel.Dock="Top" Style="{StaticResource panel-heading-default}" Content="In Process"/>
                         <ContentControl DockPanel.Dock="Bottom" Style="{StaticResource panel-body}" Padding="4" VerticalAlignment="Bottom">
                             <Button Content="+ Add Card" HorizontalAlignment="Stretch" Margin="0,0,0,0" Click="Ip_Button_Click_Add_Card"/>
                         </ContentControl>
@@ -54,7 +54,7 @@
                 </ContentControl>
                 <ContentControl Name="C3" Grid.Column="2" Style="{StaticResource panel-default}">
                     <DockPanel LastChildFill="True">
-                        <ContentControl DockPanel.Dock="Top" Style="{StaticResource panel-heading-dark}" Content="Finished"/>
+                        <ContentControl DockPanel.Dock="Top" Style="{StaticResource panel-heading-success}" Content="Finished"/>
                         <ContentControl DockPanel.Dock="Bottom" Style="{StaticResource panel-body}" Padding="4" VerticalAlignment="Bottom">
                             <Button Content="+ Add Card" HorizontalAlignment="Stretch" Margin="0,0,0,0" Click="Fns_Button_Click_Add_Card"/>
                         </ContentControl>

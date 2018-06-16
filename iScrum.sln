@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iScrum", "iScrum.csproj", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iScrum.Core", "..\iScrum.Core\iScrum.Core.csproj", "{AE22C1FC-96E0-42B6-AF60-88EEC81A1F24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "..\UnitTestProject1\UnitTestProject1.csproj", "{4CA8FA9D-94AC-4E98-AB11-269164F74F78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AE22C1FC-96E0-42B6-AF60-88EEC81A1F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE22C1FC-96E0-42B6-AF60-88EEC81A1F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE22C1FC-96E0-42B6-AF60-88EEC81A1F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA8FA9D-94AC-4E98-AB11-269164F74F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA8FA9D-94AC-4E98-AB11-269164F74F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA8FA9D-94AC-4E98-AB11-269164F74F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA8FA9D-94AC-4E98-AB11-269164F74F78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
